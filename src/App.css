@@ -67,3 +67,7 @@ body {
 .links ul li:hover {
   background-color: rgb(51, 168, 51);
 }
+
+.container {
+  display: flex;
+}
