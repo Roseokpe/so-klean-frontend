@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "img": "https://unsplash.com/photos/T5KPTbbK-_E",
+        "name": "Rose vanila wedding cake",
+        "description":"Cake for any purpose made in Lagos, Nigeria"
+    },
+    {
+        "id": 2,
+        "img": "https://unsplash.com/photos/rotFzR9lX0E",
+        "name": "Ernest brownies cupcake",
+        "description":"Cake for any fun purpose made in Lagos, Ghana"
+    },
+    {
+        "id": 3,
+        "img": "https://unsplash.com/photos/0uBlylsBuWk",
+        "name": "Elina dope birthday cake",
+        "description":"Cake for any purpose made in Lagos, Nigeria"
+    }
+]
