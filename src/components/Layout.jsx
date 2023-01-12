@@ -1,6 +1,6 @@
-import React from 'react';
 import Addcleaner from './Addcleaner';
 import Nav from './Nav';
+import CleanerDetails from './cleanerDetails';
 // import Home from './Home';
 
 const Layout = () => (
@@ -8,7 +8,9 @@ const Layout = () => (
     <Nav />
     {/* <Home /> */}
     <Addcleaner />
+    <CleanerDetails />
   </div>
 );
 
 export default Layout;
+
