@@ -1,10 +1,14 @@
-import React from 'react';
-// import { useSelector } from 'react-redux';
-// import DisplayMission from '../missions/DisplayMissions';
+import React, {useEffect} from 'react';
+import { useSelector, useDispatch} from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
+import {fetchAPPOINTMENT} from '../redux/appointments/appointments'
 
 const ReservationsDetails = () => {
-//   const missions = useSelector((state) => state.mission);
+  const appointment = useSelector((state) => state.appointment);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchAPPOINTMENT)
+  },[])
   return (
     <div className="container-fluid px-5">
       <table className="table table-hover table-striped table-responsive">
