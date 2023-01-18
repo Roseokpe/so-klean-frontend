@@ -7,10 +7,9 @@ const DELETE_CLEANER = 'so-klean/cleaners/DELETE_CLEANER';
 const initialState = [];
 
 export const fetchcleaners = createAsyncThunk(GET_CLEANER, async () => {
-  const data = await fetch('http://localhost:3000/api/v1/cleaners');
+  const data = await fetch('http://localhost:3000/cleaners/');
   const response = await data.json();
   const newList = Object.keys(response);
-  console.log(response);
   const cleaners = [];
   newList.map((key) => cleaners.push({
     id: response[key].id,
@@ -19,6 +18,7 @@ export const fetchcleaners = createAsyncThunk(GET_CLEANER, async () => {
     image: response[key].photo,
     chrges: response[key].chrges,
   }));
+  console.log(cleaners);
   return cleaners;
 });
 

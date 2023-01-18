@@ -2,12 +2,12 @@ import React from 'react';
 import { Route, Routes, NavLink } from 'react-router-dom';
 import Home from './Home';
 import Reservation from './Reservations';
-import Authentication from './Authentication';
 import logo from '../images/bmw.jpeg';
 import linkedin from '../images/linkedin.svg';
 import twiter from '../images/twitter.svg';
 import g from '../images/gplus.svg';
 import pin from '../images/pin.svg';
+import Authentication from './Authentication';
 
 const Nav = () => (
   <div className="allnav">
@@ -30,7 +30,7 @@ const Nav = () => (
             <NavLink className="link" to="/Signup">
               sign up
             </NavLink>
-            <li className="link">
+            <li>
               <Authentication />
             </li>
           </ul>
