@@ -1,14 +1,16 @@
 // import Addcleaner from './Addcleaner';
 import Nav from './Nav';
 // import CleanerDetails from './cleanerDetails';
-import Home from './Home';
+import ReservationsDetails from './Reservations';
+// import Home from './Home';
+
 
 const Layout = () => (
   <div className="container">
     <Nav />
-    <Home />
-    {/* <Addcleaner /> */}
+    {/* <Home /> */}
     {/* <CleanerDetails /> */}
+    <ReservationsDetails />
   </div>
 );
 

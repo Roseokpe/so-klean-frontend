@@ -1,5 +1,6 @@
 .cleaner-details {
   display: flex;
+  width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
   background-color: transparent;
@@ -16,7 +17,7 @@
   width: 350px;
 }
 
-.cleanerr-description {
+.cleaner-description {
   width: 50%;
   text-align: end;
   z-index: 0;
@@ -46,13 +47,18 @@
 }
 
 .reserve {
-  border: none;
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
   cursor: pointer;
-  font-size: 13px;
-  padding: 5px 20px;
-  border-radius: 5px;
-  background-color: var(--primary-color);
-  color: #000;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  outline: 0;
+  text-align: center;
+  width: 50%;
 }
 
 .bottom {
