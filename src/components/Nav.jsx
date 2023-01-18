@@ -2,7 +2,8 @@ import React from 'react';
 import { Route, Routes, NavLink } from 'react-router-dom';
 import Home from './Home';
 import Reservation from './Reservations';
-import logo from '../images/logo.png';
+import Authentication from './Authentication';
+import logo from '../images/bmw.jpeg';
 import linkedin from '../images/linkedin.svg';
 import twiter from '../images/twitter.svg';
 import g from '../images/gplus.svg';
@@ -29,6 +30,9 @@ const Nav = () => (
             <NavLink className="link" to="/Signup">
               sign up
             </NavLink>
+            <li className="link">
+              <Authentication />
+            </li>
           </ul>
         </div>
         <div className="icons">
