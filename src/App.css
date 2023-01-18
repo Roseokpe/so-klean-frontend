@@ -1,4 +1,4 @@
-/* body {
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 .nav {
   padding-top: 2%;
   height: 95.8vh;
-  background-color: white;
+  background-color: rgb(243, 237, 237);
   width: 150px;
   border-right: 0.5px solid rgb(213, 213, 213);
 }
@@ -70,4 +70,23 @@
 
 .container {
   display: flex;
-} */
+}
+
+.allnav {
+  display: flex;
+}
+
+.homecont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.links ul a {
+  padding: 3px;
+  color: black;
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold
+}

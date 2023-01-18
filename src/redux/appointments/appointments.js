@@ -14,9 +14,9 @@ export const fetchAPPOINTMENT = createAsyncThunk(GET_APPOINTMENT, async () => {
   newList.map((key) => appointments.push({
     id: response[key].id,
     country: response[key].location,
-    date: response[key].date
+    date: response[key].date,
   }));
-  console.log(appointments)
+  console.log(appointments);
   return appointments;
 });
 
