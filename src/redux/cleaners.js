@@ -7,7 +7,7 @@ const DELETE_CLEANER = 'so-klean/cleaners/DELETE_CLEANER';
 const initialState = [];
 
 export const fetchcleaners = createAsyncThunk(GET_CLEANER, async () => {
-  const data = await fetch('http://localhost:3000/cleaners/');
+  const data = await fetch('http://localhost:3000/api/v1/cleaners');
   const response = await data.json();
   const newList = Object.keys(response);
   const cleaners = [];

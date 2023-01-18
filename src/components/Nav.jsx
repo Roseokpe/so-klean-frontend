@@ -8,6 +8,7 @@ import twiter from '../images/twitter.svg';
 import g from '../images/gplus.svg';
 import pin from '../images/pin.svg';
 import Authentication from './Authentication';
+import Addcleaner from './Addcleaner';
 
 const Nav = () => (
   <div className="allnav">
@@ -27,10 +28,7 @@ const Nav = () => (
             <NavLink className="link" to="/Addcleaner">
               Add cleaner
             </NavLink>
-            <NavLink className="link" to="/Signup">
-              sign up
-            </NavLink>
-            <li>
+            <li className="link">
               <Authentication />
             </li>
           </ul>
@@ -46,6 +44,7 @@ const Nav = () => (
     <Routes>
       <Route path="/home" element={<Home />} />
       <Route path="/Reservation" element={<Reservation />} />
+      <Route path="/addcleaner" element={<Addcleaner />} />
     </Routes>
   </div>
 );
