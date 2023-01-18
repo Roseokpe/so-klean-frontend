@@ -1,14 +1,15 @@
-import React, {useEffect} from 'react';
-import { useSelector, useDispatch} from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
-import {fetchAPPOINTMENT} from '../redux/appointments/appointments'
+import { fetchAPPOINTMENT } from '../redux/appointments/appointments';
 
 const ReservationsDetails = () => {
   const appointment = useSelector((state) => state.appointment);
+  console.log(appointment);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchAPPOINTMENT)
-  },[])
+    dispatch(fetchAPPOINTMENT);
+  }, []);
   return (
     <div className="container-fluid px-5">
       <table className="table table-hover table-striped table-responsive">

@@ -1,8 +1,22 @@
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import Carousel from 'react-multi-carousel';
-import meter1 from '../images/pin.svg';
+import { fetchcleaners } from '../redux/cleaners';
+import meter1 from '../images/bmw.jpeg';
 import 'react-multi-carousel/lib/styles.css';
+import './slide.css';
 
-export default Slider = () => {
+const ImageSlide = () => {
+  const { id } = useParams();
+  console.log(id);
+  const cleaners = useSelector((state) => state.cleaners);
+  console.log(cleaners);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchcleaners());
+  }, [dispatch]);
+  const infinite = 'True';
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -22,7 +36,6 @@ export default Slider = () => {
       items: 1,
     },
   };
-
   return (
     <section className="skill" id="skills">
       <div className="container">
@@ -33,7 +46,7 @@ export default Slider = () => {
               <p>The following is a brief of the services offered at MTC</p>
               <Carousel
                 responsive={responsive}
-                infinite={true}
+                infinite={infinite}
                 className="owl-carousel owl-theme skill-slider"
               >
                 <div className="item">
@@ -49,7 +62,7 @@ export default Slider = () => {
                   <h5>TAX CONSULTANCY</h5>
                 </div>
                 <div className="item">
-                  <img  src={meter1} alt="background" />
+                  <img src={meter1} alt="background" />
                   <h5>PAYROLL</h5>
                 </div>
                 <div className="item">
@@ -65,3 +78,5 @@ export default Slider = () => {
     </section>
   );
 };
+
+export default ImageSlide;

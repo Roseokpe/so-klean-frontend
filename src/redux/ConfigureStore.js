@@ -6,7 +6,7 @@ import appointmentsReducer from './appointments/appointments';
 
 const rootReducer = combineReducers({
   cleaners: cleanersReducer,
-  appointment: appointmentsReducer
+  appointment: appointmentsReducer,
 });
 
 const store = configureStore({
