@@ -9,6 +9,7 @@ const initialState = [];
 export const fetchcleaners = createAsyncThunk(GET_CLEANER, async () => {
   const data = await fetch('http://localhost:3000/api/v1/cleaners');
   const response = await data.json();
+  console.log(response);
   const newList = Object.keys(response);
   const cleaners = [];
   newList.map((key) => cleaners.push({
@@ -16,7 +17,7 @@ export const fetchcleaners = createAsyncThunk(GET_CLEANER, async () => {
     name: response[key].name,
     country: response[key].location,
     image: response[key].photo,
-    chrges: response[key].chrges,
+    charges: response[key].charges,
   }));
   console.log(cleaners);
   return cleaners;

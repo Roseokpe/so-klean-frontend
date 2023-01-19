@@ -27,7 +27,7 @@ const Addcleaner = () => {
     };
     addCleaner(cleaneritem);
     setCleaner({
-      name: '',
+      username: '',
       charges: '',
       location: '',
       photo: '',
