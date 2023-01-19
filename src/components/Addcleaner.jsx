@@ -1,46 +1,68 @@
-import React from 'react';
+import { React, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addcleaner } from '../redux/cleaners';
 import './form.css';
 
-function Addcleaner() {
+const Addcleaner = () => {
+  const dispatch = useDispatch();
+
+  const addCleaner = (cleaneritem) => {
+    dispatch(addcleaner(cleaneritem));
+  };
+
+  const [cleaner, setCleaner] = useState({
+    name: '',
+    charges: '',
+    location: '',
+    photo: '',
+  });
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    const cleaneritem = {
+      name: cleaner.name,
+      charges: cleaner.charges,
+      location: cleaner.location,
+      photo: cleaner.photo,
+    };
+    addCleaner(cleaneritem);
+    setCleaner({
+      name: '',
+      charges: '',
+      location: '',
+      photo: '',
+    });
+  };
   return (
-    <div className="formcont">
-      <div className="form">
-        <div className="title">Add a cleaner</div>
-        <div className="subtitle">Let add a cleaner to our system!</div>
-        <div className="input-container ic1">
-          <input id="full name" className="input" type="text" placeholder=" " />
-          <div className="cut" />
-          <label className="placeholder">
-            Full name
-          </label>
-        </div>
-        <div className="input-container ic2">
-          <input id="lastname" className="input" type="text" placeholder=" " />
-          <div className="cut" />
-          <label htmlFor="location" className="placeholder">
-            Location
-          </label>
-        </div>
-        <div className="input-container ic2">
-          <input id="email" className="input" type="text" placeholder=" " />
-          <div className="cut cut-short" />
-          <label htmlFor="charges" className="placeholder">
-            charges
-          </label>
-        </div>
-        <div className="input-container ic2">
-          <input id="email" className="input" type="file" placeholder=" " />
-          <div className="cut cut-short" />
-          <label htmlFor="image" className="placeholder">
-            charges
-          </label>
-        </div>
-        <button type="button" className="submit">
-          submit
-        </button>
-      </div>
-    </div>
+    <form onSubmit={handleChange} className="add-form">
+      <h2> add a new cleaner.</h2>
+      <input
+        type="text"
+        placeholder="Name"
+        value={cleaner.name}
+        onChange={(e) => setCleaner({ ...cleaner, name: e.target.value })}
+      />
+      <input
+        type="integer"
+        placeholder="Charges not less than 1500"
+        value={cleaner.charges}
+        onChange={(e) => setCleaner({ ...cleaner, charges: e.target.value })}
+      />
+      <input
+        type="text"
+        placeholder="location"
+        value={cleaner.location}
+        onChange={(e) => setCleaner({ ...cleaner, location: e.target.value })}
+      />
+      <input
+        type="text"
+        placeholder="Photo"
+        value={cleaner.photo}
+        onChange={(e) => setCleaner({ ...cleaner, photo: e.target.value })}
+      />
+      <button type="submit">Add</button>
+    </form>
   );
-}
+};
 
 export default Addcleaner;
