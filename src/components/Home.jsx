@@ -2,10 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux/es/exports';
 import { NavLink } from 'react-router-dom';
-import Carousel, { slidesToShowPlugin } from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
 import { fetchcleaners } from '../redux/cleaners';
-import './Home.css';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -16,8 +13,8 @@ const Home = () => {
   }, [dispatch]);
 
   const onClickHandler = (e) => {
-    const aero = cleaners.find((a) => a.id === e.target.id);
-    localStorage.setItem('aero', JSON.stringify(aero));
+    const clean = cleaners.find((a) => a.id === e.target.id);
+    localStorage.setItem('cleaner', JSON.stringify(clean));
   };
 
   const handleDragStart = (e) => e.preventDefault();
@@ -26,51 +23,13 @@ const Home = () => {
       {!cleaners.length && <h6 className="text-center mt-5">No cleaners at the moment</h6>}
       {cleaners.length > 0 && (
       <div className="d-flex flex-column gap-3 justify-content-center align-items-center home">
-        <h2 className="mt-5 pt-5">Latest Models</h2>
-        <p className="top">Kindly select a plane for renting</p>
-        <Carousel
-          plugins={[
-            'arrows',
-            {
-              resolve: slidesToShowPlugin,
-              options: {
-                numberOfSlides: 3,
-              },
-            },
-          ]}
-          breakpoints={{
-            640: {
-              plugins: [
-                'arrows',
-                {
-                  resolve: slidesToShowPlugin,
-                  options: {
-                    numberOfSlides: 1,
-                  },
-                },
-              ],
-            },
-            1100: {
-              plugins: [
-                'arrows',
-                {
-                  resolve: slidesToShowPlugin,
-                  options: {
-                    numberOfSlides: 2,
-                  },
-                },
-              ],
-            },
-          }}
-          mouseTracking
-          slide={false}
-          fade={false}
-        >
+        <h2 className="mt-5 pt-5">Our cleaners</h2>
+        <p className="top">Kindly select a cleaner for renting</p>
+        <div>
           {cleaners.map((a) => (
-            <div key="aero" className="d-flex flex-column justify-content-center align-items-center gap-3">
+            <div key="clean" className="d-flex flex-column justify-content-center align-items-center gap-3">
               <NavLink
-                key={a.links}
-                to={`/cleaners/${a.id}`}
+                to={`/api/v1/cleaners/${a.id}`}
               >
                 <div className="back">
                   <div
@@ -81,13 +40,15 @@ const Home = () => {
                     role="presentation"
                     className="image"
                   />
+                  <img src={a.image} alt="image32" />
                 </div>
               </NavLink>
               <span className="name pt-3">{a.name}</span>
-              <p className="d-flex align-self-center ps-5">{a.description}</p>
+              <p className="d-flex align-self-center ps-5">{a.country}</p>
+              <p className="d-flex align-self-center ps-5">{a.charges}</p>
             </div>
           ))}
-        </Carousel>
+        </div>
       </div>
       )}
     </>
