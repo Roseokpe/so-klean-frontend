@@ -19,7 +19,7 @@ const Nav = () => (
       <div className="navigation">
         <div className="links">
           <ul>
-            <NavLink className="link" to="/home">
+            <NavLink className="link" to="/">
               home
             </NavLink>
             <NavLink className="link" to="/Reservation">
@@ -42,7 +42,7 @@ const Nav = () => (
       </div>
     </div>
     <Routes>
-      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/Reservation" element={<Reservation />} />
       <Route path="/addcleaner" element={<Addcleaner />} />
     </Routes>
