@@ -75,6 +75,7 @@ body {
 
 .allnav {
   display: flex;
+  width: 100%;
 }
 
 .homecont {
