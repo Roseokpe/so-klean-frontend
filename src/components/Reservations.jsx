@@ -22,15 +22,15 @@ const ReservationsDetails = () => {
           </tr>
         </thead>
         <tbody>
-          {/* /* {reservations.map((reservation) => (
+          {/* {reservations.map((reservation) => (
             <DisplayMission
               name={reservation.name}
               key={reservation.id}
               id={reservation.id}
               location={reservation.location}
-              reserved={mission.reserved}
+              reserved={appointment.reserved}
             />
-          ))} */ }
+          ))} */}
         </tbody>
 
       </table>

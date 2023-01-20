@@ -1,42 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './cleanerDetails.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { fetchcleaners } from '../redux/cleaners';;
+import Home from './Home';
 
-function CleanerDetails() {
-  return (
-    <div className="content">
+const CleanerDetails = () => {
+  const cleaners = useSelector((state) => state.cleaners);
+ 
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchcleaners());
+  }, [dispatch]);
+
+  const { cleanerId } = useParams();
+
+  const cleaner = cleaners.filter((c) => c.id === Number(cleanerId));
+
+   return (
       <div className="cleaner-details">
         <div className="cleaner-img">
-          <img src="/.image" alt="img-dec" />
-        </div>
-        <div className="cleaner-description">
-          <div className="descr-top">
-            <h4>cleaner name</h4>
-            <p>Sample Rich</p>
+            <img src={cleaner[0].image} alt={cleaner.photo} />
           </div>
-          <div className="descr-btm">
-            <p>
-              <h4>charges</h4>
-            </p>
-            <p className="Date">
-              Date
-            </p>
-            <p className="Location">
-              Lagos
-            </p>
+          <div className="clearner-description">
+            <p>Cleaner Information</p>
+            <div className="descr-top">
+              <h4>{cleaner[0].location}</h4>
+              <p>{cleaner[0].date}</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="bottom">
-        <button
-          className="reserve"
-          type="button"
-          onClick
-        >
-          Reserve
-
-        </button>
-      </div>
-    </div>
   );
 }
 

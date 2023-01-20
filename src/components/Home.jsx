@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux/es/exports';
 import { NavLink } from 'react-router-dom';
 import { fetchcleaners } from '../redux/cleaners';
+import CleanerDetails from './cleanerDetails';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -46,6 +47,10 @@ const Home = () => {
               <span className="name pt-3">{a.name}</span>
               <p className="d-flex align-self-center ps-5">{a.country}</p>
               <p className="d-flex align-self-center ps-5">{a.charges}</p>
+              
+              <NavLink className="link" to="/CleanerDetails">
+                <button type="submit">see more</button>
+            </NavLink>
             </div>
           ))}
         </div>
